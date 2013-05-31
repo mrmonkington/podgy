@@ -1,0 +1,64 @@
+input
+  * apache log
+    * sorted
+    * interleaving must be done in a pre-processing pass
+  
+  * format
+
+Jan 20 12:00:01 192.168.1.3 151.56.170.130 - - [20/Jan/2009:12:00:01 +0000] "GET http://www.eurogamer.net/img/EurogamerPage/logo.gif HTTP/1.1" 200 10314 "http://www.eurogamer.net/articles/wii-pikmin-and-mario-power-tennis-dated" "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; InfoPath.2; .NET CLR 2.0.50727)"
+Jan 20 12:00:01 192.168.1.2 66.249.71.35 - - [20/Jan/2009:12:00:01 +0000] "GET http://www.eurogamer.de/article_discussion.php?article_id=134290&comment_start=0 HTTP/1.1" 301 20 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+Jan 20 12:00:04 192.168.1.18 82.47.247.163 - - [20/Jan/2009:12:00:04 +0000] "GET http://www.eurogamer.net/styles/platform/ps3.css?version10.7.5-10487 HTTP/1.1" 200 695 "http://www.eurogamer.net/articles/flower-hands-on" "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.5) Gecko/2008120122 Firefox/3.0.5 Ubiquity/0.1.5"
+Jan 20 12:00:04 192.168.1.18 72.27.137.42 - - [20/Jan/2009:12:00:04 +0000] "GET http://www.eurogamer.net/ HTTP/1.1" 200 12600 "http://www.eurogamer.net/articles/soldier-of-fortune-payback-review" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; FunWebProducts; .NET CLR 2.0.50727)"
+
+
+  * discard query string
+    * exception list
+      -> variable extraction regexp
+          "&(?P<key>\w+)=(?P<value>)&
+      -> variable recombination format
+          "&".join( ( "%s=%s" % ( key, value ) for ( key, value ) in query ) )
+
+  * sessions
+    * identifier
+    * window
+    * merge sessions if multi-thread
+      * map reducable
+
+    * this is a visit
+
+  * visitors
+    * identifier without window
+    * again, merge on interleave
+
+  * log each visitor with geoip
+
+  * visitors per article (zoiks)
+    * is this partitionable in some way?
+
+  * referrals
+    * regexp based triggers on certain referrers/referees
+
+  * tracker windows are aligned to midnight
+
+  * does an external referrer start a new visit?
+
+* tracking loop
+
+  read line
+    if ! robot
+      if page
+        for each tracker
+          if tracker matches
+            generate breakout, client
+            if client tracking
+              if ! client record
+                create client record
+              if ! client session within timeout
+                create new session for client
+                set start window
+              set last seen to record
+              if client impression tracking
+                register record
+            if impression tracking
+              register impression
+

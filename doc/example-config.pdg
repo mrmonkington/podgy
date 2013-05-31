@@ -1,0 +1,52 @@
+<podge>
+	<globals>
+		<session-timeout>30</session-timeout>
+		<database dsn="host=localhost dbname=podgy" />
+	</globals>
+
+	<classifier
+		name="slideshow"
+		uri="(\.jpe?g|\.gif|\.png)\?(.*&amp;)?slideshow=true(&amp;|$)"
+	/>
+
+	<exclusions>
+		<import type="robot" format="abce" src="doc/abce_exclude_20090128.txt" />
+	</exclusions>
+
+	<report label="Eurogamer">
+		<meta />
+		<tracker
+			label="Network"
+			uri="^http://www.eurogamer.[::domain-chunk::]"
+			impressions="true"
+			visits="true"
+			uniques="true"
+			window="3600"
+			consider="page slideshow"
+		/>
+		<tracker
+			label="Per site"
+			uri="^http://www.eurogamer.(?P{eg_locale}[::domain-chunk::])"
+			impressions="true"
+			visits="true"
+			uniques="true"
+			window="3600"
+			consider="page slideshow"
+		/>
+	</report>
+
+	<report label="GamesIndustry">
+		<meta />
+		<tracker
+			label="Network"
+			uri="^http://www.gamesindustry.biz"
+			impressions="true"
+			visits="true"
+			uniques="true"
+			window="3600"
+			consider="page"
+		/>
+	</report>
+
+
+</podge>

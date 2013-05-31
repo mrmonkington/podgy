@@ -1,0 +1,543 @@
+#
+# IAB_ABCe_International_Spiders_and_Robots_200901_21-101247
+#
+# January 21, 2009
+#
+#
+# **********COMMENTS SECTION***************************************************
+#
+# This list has been reviewed by the IAB MTF Spider & Robot Policy Board.
+# This file contains a list of patterns that may be matched against HTTP User 
+# Agent (UA) strings to determine whether that UA matches a known spider or 
+# robot. This is one step of several required for compliance to IAB Advertising
+# Measurement Guidelines.
+#
+# The list is valid for use when counting Client Side Counting (CSC) 
+# transactions. See [http://www.iab.net/standards/pdf/2292%20IAB%20spreads.pdf]
+# for more info.
+#
+# Rule: If any of these patterns are found to match any string within the HTTP 
+# User-Agent, case insensitively, it is identified as a non-human interaction 
+# and so should be filtered from counts.
+#
+# It is strongly suggested that users analyze their own log data and sort this 
+# list in order of frequency to allow their filter program to work as 
+# efficiently as possible. 
+#
+# This list is provided in good faith but must be used at the user's own risk.  
+# The IAB, ABCe and ImServices accept no responsibility for any 
+# legal, technical or commercial consequences arising from the use of this list.
+#
+# Special characters in this file:
+#	# - (only at the start of a line) this line is a comment 
+#	| - field separator 
+#	, - field separator (Used when multiple exceptions)
+#	blank lines may be present. ignore them.
+#
+#
+# Fields - delimited by a pipe symbol [|]:
+# 1) pattern - case insensitive string to match anywhere in the string
+#	reserved characters are URL-escaped if present (|=%7C #=%23)
+# 2) active flag
+# 1=pattern is active and should be matched
+# 0=pattern is inactive, and should ignored
+# 3) [optional] comma-separated list of exception patterns
+#	reserved characters are URL-escaped if present (|=%7C #=%23 ,=%2C)
+# 4) A an additional flag was added to this list in November 2005 to identify 
+#    those user-agent strings on this list that would not pass the valid user-
+#    agent test and therefore, are redundant if both lists are used.
+#          1=this entry is not needed for those who use a two-pass approach
+#          0=this entry is always needed for both one-pass and two-pass 
+#            approaches
+# 5) Another flag was added to this list when the IAB and ABCe merged their two
+#    lists (01/06) to identify those strings that primarily impact page
+#    impression measurement vs. those strings that primarily impact ad  
+#    impression measurement (or both). The flags are as follows:
+#          0=this entry primarily impacts page impression measurement
+#          1=this entry primarily impacts ad impression measurement
+#          2=this entry impacts both
+#
+# NOTES:
+# The 3rd column supports an 'exception' feature, which lets the file specify 
+# broadly matching patterns and then allow special cases. For instance, if a UA
+# advertises itself as a 'robot', it should be ignored for counting purposes 
+# unless the string 'robotics' is present, which allows for the counting of US 
+# Robotics cobranded browsers. There may be more than one exception for each 
+# pattern separated by a comma. Please note that use of this field is optional.
+#
+# The 5th column attempts to associate the robot with page impressions or ad
+# impressions (or both) but should be used only as a guide. Application of this
+# list should be based on an analysis of the activity itself before excluding
+# any entries.
+#  
+# UA strings are considered uncountable (per IAB Guidelines) if they contain 
+# any of the following patterns (note: patterns are case insensitive, but left 
+# in this file in mixed case for human legibility)
+#
+# Contact ImServices Group in the U.S. (spiders.bots@imservicesgroup.com) or 
+# ABCe in the UK (spiders.bots@abce.org.uk) with any feedback 
+# regarding this file.
+#
+#******************* END OF COMMENTS ******************************************
+/teoma|1||0|0
+192.comAgent|1||0|0
+1job|1||0|0
+247sitewatch|1||0|0
+abilon|1||0|0
+abot|1||0|0
+accoona-ai-agent|1||0|0
+AdsBot-Google|1||0|1
+Advanced Email Extractor|1||0|2
+Advanced+Email+Extractor|1||0|2
+agentname|1||0|1
+aipbot|1||0|0
+aladdino|1||0|0
+AlertSite|1||0|2
+AOL_CAP|1||0|2
+apachebench|1||0|0
+aport|1||0|2
+appie|1||0|0
+applesyndication|1||0|0
+arachnia|1||0|0
+aranha|1||0|0
+Argus|1||0|2
+art-online.com|1||0|0
+ask jeeves|1||0|0
+ask+jeeves|1||0|0
+asterias|1||0|0
+atomz|1||0|0
+Attributor|1||1|2
+AutoMapIt|1||0|2
+avantgo|1||0|2
+avsearch|1||0|0
+b2w|1||0|0
+backweb|1||0|1
+baidu|1||0|0
+becomebot|1||0|0
+bigbrother|1||0|0
+BIMBO|1||0|1
+BITS|1||1|0
+BitvoUserAgent|1||0|2
+blitzbot|1||0|0
+bloglines|1||0|0
+bordermanager|1||0|2
+bot/1.0|1||0|2
+bumblebee|1||0|2
+c r a w l e r|1||0|2
+c+r+a+w+l+e+r|1||0|2
+CE-Preload|1||1|1
+change detection|1||0|0
+change+detection|1||0|0
+changedetection|1||0|2
+charlotte|1||0|1
+check_http|1||0|0
+checkurl|1||0|0
+chkd|1||0|0
+ClickAJob|1||1|2
+coast|1||0|0
+CogisumBot|1||1|2
+combine|1||0|0
+cometsearch|1||0|0
+ContentSmartz|1||1|2
+contype|1||0|0
+convera|1||0|0
+copernicenterprisesearch|1||0|0
+copyrightcheck|1||0|0
+cosmos|1||0|0
+crawler|1||0|2
+crescent|1||0|1
+crucial inforation miner|1||0|0
+crucial+inforation+miner|1||0|0
+curl|1||0|0
+D1GArabicEngine|1||1|2
+dialer|1||0|1
+diphonet|1||0|0
+Download Ninja|1||1|1
+Download+Ninja|1||1|1
+dtaagent|1||0|0
+dts agent|1||0|2
+dts+agent|1||0|2
+earthcom.info|1||0|0
+echo|1|bonecho|0|1
+emailsiphon|1||0|0
+EmailSmartz|1||0|0
+eNews Creator|1||1|1
+eNews+Creator|1||1|1
+Enfish Tracker|1||0|1
+Enfish+Tracker|1||0|1
+Europarchive|1||0|2
+ez publish link validator|1||0|0
+ez+publish+link+validator|1||0|0
+fast|1|fastbar|0|0
+favorg|1||0|0
+FeedFetcher|1||0|2
+feedonfeeds|1||0|0
+fetch|1||0|2
+filehound|1||0|0
+FindLinks|1||0|2
+Firehunter|1||0|1
+flashget|1||0|0
+Forex Trading Network Organization|1||0|2
+Forex+Trading+Network+Organization|1||0|2
+Freedom|1||0|2
+freefind|1||0|0
+frontier|1||0|2
+geniebot|1||0|0
+getright|1||1|1
+Globrix|1||0|2
+go!zilla|1||0|1
+Goldfire|1||0|0
+golem|1||0|1
+gomezagent|1||0|2
+Google Wireless Transcoder|1||0|1
+Google+Wireless+Transcoder|1||0|1
+googlebot|1||0|2
+grabber|1||0|0
+grub|1||0|0
+gulliver|1||0|0
+hapax|1||0|0
+harvest|1||0|1
+heritrix|1||0|0
+hit list|1||0|0
+hit+list|1||0|0
+hitlist|1||0|0
+holmes|1||1|2
+Hoopla|1||1|2
+htdig|1||0|0
+http://bot.ims.ca|1||1|2
+HTTP-WebTest|1||0|2
+httrack|1||0|1
+ia_archive|1||0|0
+ibot|1||0|0
+ichiro|1||0|0
+ideare|1||0|0
+IEAutoDiscovery|1||0|0
+iltrovatore-setaccio|1||0|0
+indy library|1||0|2
+indy+library|1||0|2
+infolink|1||0|1
+infoseek|1||0|0
+inktomi search|1||0|0
+inktomi+search|1||0|0
+InnovantageBot|1||0|2
+internal zero-knowledge agent|1||0|2
+internal+zero-knowledge+agent|1||0|2
+internet ninja|1||1|1
+internet+ninja|1||1|1
+internetseer|1||0|0
+inverse ip insight|1||0|0
+inverse+ip+insight|1||0|0
+iOpus-I-M|1||0|0
+ipsentry|1||0|0
+irc search|1||1|2
+irc+search|1||1|2
+irlbot|1||0|0
+iSearch|1||1|2
+isilo|1||0|0
+jakarta|1||0|0
+janrain-lobster|1||0|0
+JDXROBOT|1||0|2
+jetbot|1||0|0
+jobo|1||0|0
+JobRapido|1||0|2
+JoeDog|1||1|2
+Jumpbot|1||0|2
+justview|1||0|1
+Kalooga|1||1|2
+keepalive|1||0|0
+keynote|1||0|2
+KHTE|1||0|2
+kilroy|1||0|1
+kinja|1||0|0
+KTXN|1||0|2
+kummhttp|1||0|0
+lachesis|1||0|0
+larbin|1||0|2
+libwww-perl|1||0|1
+Liferea|1||0|2
+linkbot|1||0|2
+linkchecker|1||0|2
+linklint|1||0|0
+linkscan|1||0|0
+linksweeper|1||0|0
+linkwalker|1||0|0
+lisa|1||0|0
+LiteFinder|1||1|2
+locust|1||0|0
+lotusdiscovery|1||0|0
+lwp|1||0|2
+lydia|1||0|0
+mac finder|1||0|0
+mac+finder|1||0|0
+mackster|1||0|2
+MacReport|1||1|1
+magenta|1||0|0
+magus bot|1||0|0
+magus+bot|1||0|0
+markwatch|1||0|1
+Maxamine|1||0|2
+mazingo|1||0|0
+mazzilla|1||0|0
+mediapartners-google|1||0|0
+mercator|1||0|0
+mfc_tear_sample|1||0|0
+microsoft internet explorer/4.40.426 (windows 95)|1||0|0
+microsoft scheduled cache content download service|1||0|0
+microsoft url control|1||1|2
+microsoft+internet+explorer/4.40.426+(windows+95)|1||0|0
+microsoft+scheduled+cache+content+download+service|1||0|0
+microsoft+url+control|1||1|2
+minuteman|1||0|0
+mirago|1||0|0
+missigua|1||0|0
+miva|1||0|0
+mj12bot|1||0|0
+mobipocket webcompanion|1||1|2
+mobipocket+webcompanion|1||1|2
+moget|1||0|0
+monitor|1||0|1
+monkeycrawl|1||0|0
+monster|1||0|1
+Moreoverbot|1||0|2
+mothra/126-paladium|1||0|0
+motor|1|motorola|0|1
+mozilla 2.0 (compatible; msie 3.02; update a; windows nt)|1||0|0
+Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;1813)|1||1|2
+Mozilla/4.0+(compatible;+MSIE+6.0;+Windows+NT+5.1;1813)|1||1|2
+mozilla/5.0 (compatible; msie 5.0)|1||0|2
+mozilla/5.0+(compatible;+msie+5.0)|1||0|2
+mozilla+2.0+(compatible;+msie+3.02;+update+a;+windows+nt)|1||0|0
+ms frontpage|1||0|1
+MS Search|1||1|1
+ms+frontpage|1||0|1
+MS+Search|1||1|1
+MSNPTC|1||1|1
+MSNRV|1||1|2
+MSRBOT|1||0|2
+nalanda|1||0|0
+NASA Search|1||0|0
+NaverBot|1||0|2
+nbot|1||0|0
+N-central|1||0|2
+nessus|1||0|0
+netmechanic|1||0|0
+nettraffic sensor|1||1|2
+nettraffic+sensor|1||1|2
+new/0.1libwww|1||0|0
+news reader|1||0|2
+news search|1||0|0
+news+reader|1||0|2
+news+search|1||0|0
+newsapp|1||0|0
+newsbot|1||0|0
+newslookup|1||0|0
+newsmachine|1||0|0
+newsnow|1||0|0
+newssearch|1||0|0
+newstin|1||0|2
+nextgensearchbot|1||0|0
+ng/2.0|1||0|0
+nomad|1||0|1
+npbot|1||0|2
+nutch|1||0|0
+nutscrape|1||0|0
+obot|1|robotics|0|0
+ocelli|1||0|0
+omniexplorer|1||0|0
+onkosh|1||1|2
+oodlebot|1||0|2
+openfind|1||0|0
+oracle ultra search|1||0|0
+oracle+ultra+search|1||0|0
+Pagebull|1||1|2
+panscient.com|1||0|2
+Paros|1||1|2
+patric|1||0|1
+perman surfer|1||0|1
+perman+surfer|1||0|1
+Pingdom|1||1|2
+pioneer|1||0|1
+pita|1|hospital|0|1
+pluck|1||0|0
+plumtree|1||0|0
+polybot|1||0|0
+pompos|1||0|0
+port huron labs|1||0|0
+port+huron+labs|1||0|0
+powermarks|1||0|1
+Powerset|1||1|2
+Pricerunner|1||1|2
+Proximic|1||1|2
+proxysg|1||0|0
+psbot|1||0|0
+psycheclone|1||0|0
+pulpfiction|1||0|0
+PureLoad|1||1|2
+Python-urllib|1||1|2
+quepasacreep|1||0|0
+Quintura-crw|1||1|2
+rational sitecheck|1||0|0
+rational+sitecheck|1||0|0
+realnamesbot|1||0|0
+robot|1|robotics|0|2
+rpt-http|1||0|2
+rss client|1||0|0
+rss+client|1||0|0
+rssmaker-ng|1||0|0
+rssreader|1||0|0
+rufusbot|1||0|0
+sawaalrobo|1||0|0
+schmozilla|1||0|0
+scirus|1||0|0
+scooter|1||0|0
+scoutabout|1||0|0
+Scoutjet|1||1|2
+search.ch|1||0|0
+search_comments\at\sensis\dot\com\dot\au|1||0|0
+Search-Engine-Studio|1||1|2
+seekbot|1||0|0
+seeker.lookseek.com|1||0|0
+servers alive|1||0|0
+servers+alive|1||0|0
+ShablastBot|1||1|2
+sherlock|1||0|0
+shopwiki|1||0|0
+sitescooper|1||0|0
+SiteVigil|1||0|0
+slurp|1||0|2
+slysearch|1||0|0
+snooper|1||0|0
+Snoopy|1||0|2
+sohu|1||0|0
+Sphere Scout|1||1|2
+Sphere+Scout|1||1|2
+spider|1||0|2
+spike|1||0|1
+spinne|1|spinner|0|2
+spyder|1||0|2
+squid cache|1||0|1
+squid+cache|1||0|1
+stackrambler|1||0|0
+stuff|1||0|2
+sucker|1||0|1
+sundoh search|1||0|0
+sundoh+search|1||0|0
+SurveyBot/|1||0|2
+Swish-e|1||1|2
+System Center Operations Manager|1||1|2
+System+Center+Operations+Manager|1||1|2
+szukacz|1||0|0
+taz|1||0|1
+teleport|1||0|2
+templeton|1||0|1
+terrawizbot|1||0|0
+thunderstone|1||0|1
+t-h-u-n-d-e-r-s-t-o-n-e|1||0|1
+topix|1||0|0
+Twiceler|1||1|2
+Twingly|1||1|2
+ukonline|1||0|0
+ultraseek|1||0|0
+UniversalSearch|1||0|2
+urchin|1||0|0
+urlcheck|1||0|0
+vagabondo|1||0|0
+versus|1||0|0
+vivisimo|1||0|2
+voyager|1||0|2
+Watchmouse|1||1|2
+web downloader|1||1|1
+web+downloader|1||1|1
+webauto|1||0|1
+webbot|1||0|2
+webcapture|1||0|2
+webcheck|1||0|0
+webclipping.com|1||0|0
+WebCopier|1||1|1
+webcrawl|1||0|2
+webdup|1||0|2
+webextractor|1||0|0
+webinator|1||0|2
+Webmetrics|1||0|2
+WebNews Arianna|1||1|2
+WebNews+Arianna|1||1|2
+website extractor|1||0|2
+website+extractor|1||0|2
+websitepulse|1||1|2
+webtool|1||0|1
+webtrends|1||0|0
+webvac|1||0|0
+webwasher|1||0|0
+webzip|1||0|1
+wfarc|1||0|0
+wget|1||1|2
+whatsup|1||0|2
+whistleblower|1||0|0
+whizbang|1||0|0
+worm|1||0|2
+xenu|1||0|0
+yacy|1||0|0
+Yahoo Pipes|1||0|2
+Yahoo+Pipes|1||0|2
+yahoofeedseeker|1||0|2
+Yahoo-RichAbstracts|1||0|2
+YahooSeeker|1||0|2
+yandex|1||0|0
+Yanga|1||1|2
+ync|1||0|0
+yotta|1||0|0
+zealbot|1||0|0
+zeus|1||0|0
+zibber|1||0|0
+zipppbot|1||0|0
+zyborg|1||0|0
+# Modifications to this list are noted below
+# removed abachobot, e-societyrobot, exabot, gais robot, gais+robot, gigabot, girafabot, linbot, lycos monitoring robot, lycos+monitoring+robot, msnbot, nabot, rabot, rpt-httpclient, synobot, turnitinbot, voilabot, and www.server-monitoring.co.uk January 2006
+# added ez publish link validator, ez+publish+link+validator, whistleblower, terrawizbot, and topix.net January 2006
+# If a sub-string match of "obot" is found, it is valid if the full term is "robotics".  If a sub-string match of "spinne" is found, it is valid if the full term is "spinner".  January 2006
+# added Goldfire, Site Vigil, EmailSmartz, iOpus-I-M, and BITS February 2006
+# added heritrix March 2006
+# removed topix.net March 2006
+# added c r a w l e r (c+r+a+w+l+e+r), Freedom, internal zero-knowledge agent (internal+zero-knowledge+agent), and yahoofeedseeker April 2006
+# removed Yahoo, newwave-lisa, and ipswitch_whatsup April 2006
+# added NaverBot, SurveyBot/, Liferea, and NetNewsWire May 2006
+# If a sub-string match of "fast" is found, it is valid if the full term is "fastbar".  If a sub-string match of "motor" is found, it is valid if the full term is "motorola".  May 2006
+# added TPSystem June 2006
+# added YahooSeeker, FindLinks, and psycheclone July 2006
+# added oodlebot, mackster, AdsBot-Google, and InnovantageBot August 2006
+# added 192.comAgent and NASA Search September 2006
+# added KHTE and KTXN (these are related to keynote) September 2006
+# added DigExt September 2006
+# removed DoCoMo September 2006
+# added AutoMapIt October 2006
+# removed DigExt October 2006
+# no changes were made for November 2006
+# added Advanced Email Extractor (Advanced+Email+Extractor), MSRBOT, Moreoverbot, and search_comments\at\sensis\dot\com\dot\au December 2006
+# removed sensis December 2006
+# added (1) HTTP-WebTest, (2) Forex Trading Network Organization, (3) Forex+Trading+Network+Organization January 2007
+# added (1) news reader (2) news+reader (3) webbot & (4) FeedFetcher February 2007
+# Inadvertently removed from February 2007 List (1) HTTP-WebTest, (2) Forex Trading Network Organization, (3) Forex+Trading+Network+Organization
+# added back (1) HTTP-WebTest, (2) Forex Trading Network Organization, (3) Forex+Trading+Network+Organization March 2007
+# added newstin, removed TPSystem March 2007
+# April 2007 - Added (1) panscient.com, (2) Snoopy & (3) JDXROBOT
+# May 2007 - (1) Heritrix updated - 4th flag changed to 0, (2) Echo updated - exception "bonecho" added.
+# June 2007 - (1) bot/1.0 added.
+# July 2007 - (1) Jumpbot, (2) N-central, & (3) Globrix added.
+# August 2007 - no changes
+# September 2007 - (1) AOL_CAP, (2) Pagebull, (3) UniversalSearch, & (4) Hoopla
+# October 2007 - (1) Maxamine, (2) Argus, (3) Google Wireless Transcoder
+# November 2007 - (1) ClickAJob, (2) JobRapido, (3) WebNews Arianna, (4) WebNews+Arianna
+# December 2007 - (1) CogisumBot, (2) Python-urllib, (3) LiteFinder, (4) iSearch, (5) http://bot.ims.ca
+# January 2008 - (1) Pricerunner
+# February 2008 - (1) System Center Operations Manager, (2) System+Center+Operations+Manager
+# March 2008 - (1) nettraffic sensor (2) nettraffic+sensor (3) D1GArabicEngine
+# April 2008 - (1) JoeDog (2) ShablastBot
+# May 2008 - (1) websitepulse (2) BitvoUserAgent
+# June 2008 - (1) AVG string (2) Swish-e (3) ContentSmartz (4) Quintura-crw
+# July 2008 - (1) Paros (2) MSNRV (3) Kalooga (4) Watchmouse (5) PureLoad
+# August 2008 - (1) Proximic (2) Powerset (3) Yahoo-RichAbstracts (4) Scoutjet (5) Twiceler (6) Twingly
+# September 2008 - (1) Attributor (2) Pingdom
+# October 2008 - (1) Europarchive
+# November 2008 - (1) Search-Engine-Studio (2) iRc Search (3) iRc+Search (4) Yanga (5) Webmetrics (6) DoubleVerify Crawler (7) DoubleVerify+Crawler (8) Newsgator was removed
+# December 2008 - (1) vivisimo (2) onkosh (3) holmes (4) removed netnewswire (5) removed newsfire (6) removed doubleverify crawler and doubleverify+crawler
+# January 2009 - (1) AlertSite (2) Sphere Scout (3) Sphere+Scout (4) Yahoo Pipes (5) Yahoo+Pipes
