@@ -3,7 +3,7 @@ import re
 import optparse
 
 # this package
-from podgy import parse, robots, classifier, tracker, config 
+from analysis import parse, robots, classifier, tracker, config 
 
 import pprint
 import operator
